@@ -94,9 +94,10 @@ def log_request_info():
 # =========================
 # Routes
 # =========================
-@app.route("/asdf", methods=["GET"])
+@app.route("/", methods=["GET"])
 def root():
     return jsonify({
+        "foo": "foo foo",
         "status": "OK",
         "service": "Kia Vehicle Control API"
     }), 200
@@ -214,7 +215,7 @@ def stop_climate():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/", methods=["POST"])
+@app.route("/unlock_car", methods=["POST"])
 def unlock_car():
     if not authorize_request():
         return jsonify({"error": "Unauthorized"}), 403
