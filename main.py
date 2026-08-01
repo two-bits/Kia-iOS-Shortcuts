@@ -97,7 +97,6 @@ def log_request_info():
 @app.route("/", methods=["GET"])
 def root():
     return jsonify({
-        "foo": "foo foo",
         "status": "OK",
         "service": "Kia Vehicle Control API"
     }), 200
