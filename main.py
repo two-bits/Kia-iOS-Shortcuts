@@ -117,7 +117,7 @@ def auth_status():
         }), 401
 
 
-@app.route("/list_vehicles", methods=["POST", "GET"])
+@app.route("/list_vehicles", methods=["GET"])
 def list_vehicles():
     if not authorize_request():
         return jsonify({"error": "Unauthorized"}), 403
@@ -214,7 +214,7 @@ def stop_climate():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/unlock_car", methods=["POST", "GET"])
+@app.route("/unlock_car", methods=["POST"])
 def unlock_car():
     if not authorize_request():
         return jsonify({"error": "Unauthorized"}), 403
