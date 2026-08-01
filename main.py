@@ -117,7 +117,7 @@ def auth_status():
         }), 401
 
 
-@app.route("/list_vehicles", methods=["POST", "GET"])
+@app.route("/list_vehicles", methods=["GET"])
 def list_vehicles():
     if not authorize_request():
         return jsonify({"error": "Unauthorized"}), 403
